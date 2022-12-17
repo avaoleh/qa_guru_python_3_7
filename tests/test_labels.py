@@ -21,5 +21,5 @@ def test_dynamic_labels():
 @allure.feature("Задачи в репозитории")
 @allure.story("Авторизованный пользователь может создать задачу в репозитории")
 @allure.link("https://github.com", name="Testing")
-def test_decorator_labels():
+def test_decorator_labels(open_browser):
     pass

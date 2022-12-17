@@ -13,8 +13,8 @@ from allure_commons.types import AttachmentType
 @allure.feature('Задачи в репозитории')
 @allure.story('Авторизованный пользователь может создать задачу в репозитории, без шагов')
 @allure.link('https://github.com', name='Testing')
-def test_github():
-    browser.open('https://github.com/')
+def test_github(open_browser):
+    #browser.open('https://github.com/')
     s('.header-search-input').click()
     s('.header-search-input').send_keys('avaoleh/qa_guru_python_3_7')
     s('.header-search-input').submit()
@@ -29,9 +29,13 @@ def test_github():
 @allure.feature('Задачи в репозитории')
 @allure.story('Авторизованный пользователь может создать задачу в репозитории, с лямбда шагами')
 @allure.link('https://github.com', name='Testing')
-def test_dinamic_steps():
+def test_dinamic_steps(open_browser):
+    # with allure.step('Настройка разрешения окна'):
+    #     browser_config()
+
     with allure.step('Открываем главную страницу'):
-        browser.open('https://github.com/')
+        #browser.open('https://github.com/')
+        pass
 
     with allure.step('Ищем репозиторий'):
         s('.header-search-input').click()
@@ -58,8 +62,8 @@ def test_dinamic_steps():
 @allure.feature('Задачи в репозитории')
 @allure.story('Авторизованный пользователь может создать задачу в репозитории, с декораторами')
 @allure.link('https://github.com', name='Testing')
-def test_decorator_steps():
-    open_main_page()
+def test_decorator_steps(open_browser):
+    #open_main_page()
     search_for_repository('avaoleh/qa_guru_python_3_7')
     go_to_repository('avaoleh/qa_guru_python_3_7')
     open_issue_tab()

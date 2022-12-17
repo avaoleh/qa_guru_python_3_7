@@ -5,9 +5,9 @@ from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 
-def test_dynamic_steps():
-    with allure.step("Открываем главную страницу"):
-        browser.open("https://github.com")
+def test_dynamic_steps(open_browser):
+    # with allure.step("Открываем главную страницу"):
+    #     browser.open("https://github.com")
 
     with allure.step("Ищем репозитория"):
         s(".header-search-input").click()
@@ -24,8 +24,8 @@ def test_dynamic_steps():
         s(by.partial_text("#1")).should(be.visible)
 
 
-def test_decorator_steps():
-    open_main_page()
+def test_decorator_steps(open_browser):
+    #open_main_page()
     search_for_repository("avaoleh/qa_guru_python_3_7")
     go_to_repository("avaoleh/qa_guru_python_3_7")
     open_issue_tab()
