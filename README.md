@@ -5,3 +5,10 @@
 2. Лямбда шаги через with allure.step (см.test/test_steps.py)
 3. Шаги с декоратором @allure.step (см.test/test_steps.py)
 4. Разметку тестов всеми аннотациями (см. test/test_allure_annotations.py)
+
+Run tests: 
+- pytest tests/
+
+Run allure reports:
+- allure serve tests/allure_results
+ 
